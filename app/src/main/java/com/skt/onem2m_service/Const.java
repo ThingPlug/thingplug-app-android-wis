@@ -51,8 +51,8 @@ public class Const {
 
     public static final String MGMTCMD_NAME = "Android";
 
-    public static final int CONTROL_LOOKUP_INTERVAL = 500; // ms
-    public static final int CONTROL_LOOKUP_MAX_COUNT = 6;
+    public static final int CONTROL_LOOKUP_INTERVAL = 2000; // ms
+    public static final int CONTROL_LOOKUP_MAX_COUNT = 3;
 
     public static final int CONTROL_CAMERA_LOOKUP_INTERVAL = 1000; // ms
     public static final int CONTROL_CAMERA_LOOKUP_MAX_COUNT = 20;

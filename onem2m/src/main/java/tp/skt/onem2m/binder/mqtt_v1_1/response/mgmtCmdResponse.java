@@ -212,6 +212,10 @@ public class mgmtCmdResponse extends ResponseBase {
                 @Expose
                 @Element(required = false)
                 private String exra;
+
+                @Expose
+                @Element(required = false)
+                private String exm;
             }
         }
     }
@@ -247,5 +251,6 @@ public class mgmtCmdResponse extends ResponseBase {
         MQTTUtils.log("exs : " + pc.mgc.exin.exs);
         MQTTUtils.log("ext : " + pc.mgc.exin.ext);
         MQTTUtils.log("exra : " + pc.mgc.exin.exra);
+        MQTTUtils.log("exm : " + pc.mgc.exin.exm);
     }
 }
