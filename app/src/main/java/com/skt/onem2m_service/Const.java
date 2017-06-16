@@ -20,10 +20,10 @@ public class Const {
     public static final String URL_REGISTER_DEVICE = "/ThingPlug?division=device&function=regist";
 
     public static final String URL_SERVER_DEFAULT = "thingplugpf.sktiot.com:1883";
-    public static final String SERVER_APPEUI_DEFAULT = "9999991000000090"; //for WIS
+    public static final String SERVER_APPEUI_DEFAULT = "9999991000000132"; //for LoRa Shield
     public static final boolean USE_TLS_DEFAULT = false;
     public static final boolean USE_TLV_DEFAULT = false;
-    public static final boolean SHOW_CONTENT_DEFAULT = true; //for WIS
+    public static final boolean SHOW_CONTENT_DEFAULT = true;
 
     // read time delay (msec)
     public static final int SENSOR_DEFAULT_READ_PERIOD = 1000;
@@ -61,7 +61,7 @@ public class Const {
     public static final String EXECRESULT_DENIED = "2";
 
 
-    public static final boolean FOR_WIS = true;
+    public static final boolean FOR_LORA = true;
     public static final String TTV_PREFIX = "SKTP";
     public static final String CMD_PREFIX = "0x80";
 }

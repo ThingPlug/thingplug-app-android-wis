@@ -231,7 +231,7 @@ public class execInstanceControl extends oneM2MResource {
         MQTTUtils.log("et : " + pc.exin.et);
         MQTTUtils.log("lbl : " + pc.exin.lbl);
         MQTTUtils.log("exs : " + pc.exin.exs);
-        MQTTUtils.log("exr : " + pc.exin.cmt);
+        MQTTUtils.log("cmt : " + pc.exin.cmt);
         MQTTUtils.log("ext : " + pc.exin.ext);
         MQTTUtils.log("exra : " + pc.exin.exra);
         MQTTUtils.log("nm : " + pc.exin.nm);

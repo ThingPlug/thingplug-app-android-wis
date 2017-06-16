@@ -10,16 +10,16 @@ import org.simpleframework.xml.Root;
 import tp.skt.onem2m.binder.mqtt_v1_1.Definitions;
 import tp.skt.onem2m.common.MQTTConst;
 
-    /**
-     * node request
-     * <p>
-     * Copyright (C) 2017. SK Telecom, All Rights Reserved.
-     * Written 2017, by SK Telecom
-     */
-    @Root(name = "req")
-    @Namespace(prefix = "m2m", reference = "http://www.onem2m.org/xml/protocols")
-    @Default(DefaultType.FIELD)
-    public class node extends RequestBase {
+/**
+ * node request
+ * <p>
+ * Copyright (C) 2017. SK Telecom, All Rights Reserved.
+ * Written 2017, by SK Telecom
+ */
+@Root(name = "req")
+@Namespace(prefix = "m2m", reference = "http://www.onem2m.org/xml/protocols")
+@Default(DefaultType.FIELD)
+public class node extends RequestBase {
 
     /**
      * node constructor

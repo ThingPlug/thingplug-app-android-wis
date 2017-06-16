@@ -405,7 +405,7 @@ public class TLVBuilder {
         if (sensorType != SensorType.NONE) {
             sensorInfo = new SensorInfo(sensorType);
             if (sensorType.getCategory() != SensorType.Category.ACTUATOR) {
-                //sensorInfo.setActivated(value > 0); //WIS
+                //sensorInfo.setActivated(value > 0); //for LoRa
             }
             else {
                 sensorInfo.setValue(0, value);

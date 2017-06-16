@@ -112,7 +112,7 @@ public class SensorListActivity extends AppCompatActivity {
         listView.addHeaderView(contentView);
         content = (TextView) findViewById(R.id.content);
 
-        // listView에 header, footer 추가.
+        // listView에 header, footer 추가
 //        listView.addHeaderView(contentView) ;
 
         ActionBar bar = getSupportActionBar();
@@ -124,7 +124,7 @@ public class SensorListActivity extends AppCompatActivity {
         oneM2MWorker.setStateListener(new OneM2MWorkerListener());
 
         googleDriveHandler = new GoogleDriveHandler(this, new GoogleDriveCommandListener());
-        //googleDriveHandler.connect(); //WIS
+        //googleDriveHandler.connect(); //for LoRa
 
 //        deviceInfo = new SensorInfo(SensorType.DEVICE);
         oldTransferInterval = userInfo.loadTransferInterval();
@@ -181,7 +181,7 @@ public class SensorListActivity extends AppCompatActivity {
     protected void onDestroy() {
         Log.d(TAG, "onDestroy!");
         oneM2MWorker.disconnect();
-        //googleDriveHandler.disconnect(); //WIS
+        //googleDriveHandler.disconnect(); //for LoRa
         // clear sensor list
         clearSensorList();
         super.onDestroy();
@@ -209,7 +209,7 @@ public class SensorListActivity extends AppCompatActivity {
     private void addeSensorInfo(SensorType sensorType) {
         SensorInfo sensorInfo = new SensorInfo(sensorType);
         //sensorInfo.setActivated(false);
-        sensorInfo.setActivated(true); // WIS
+        sensorInfo.setActivated(true); //for LoRa
         sensorInfos.add(sensorInfo);
     }
 
@@ -218,7 +218,7 @@ public class SensorListActivity extends AppCompatActivity {
      */
     private void createSensorList() {
 
-        if(Const.FOR_WIS == true) {
+        if(Const.FOR_LORA == true) {
             addeSensorInfo(SensorType.AMBIENT_TEMPERATURE);
             addeSensorInfo(SensorType.LIGHT);
             addeSensorInfo(SensorType.FAN);
@@ -394,7 +394,7 @@ public class SensorListActivity extends AppCompatActivity {
                 itemStatus.setVisibility(View.GONE);
                 itemActivate.setVisibility(View.GONE);
                 //itemActuatorRun.setEnabled(sensorInfo.isActivated() && !sensorInfo.isSuspend());
-                itemActuatorRun.setEnabled(true); //WIS
+                itemActuatorRun.setEnabled(true); //for LoRa
             }
             else {
                 itemActuatorRun.setVisibility(View.GONE);
@@ -476,7 +476,6 @@ public class SensorListActivity extends AppCompatActivity {
 
             switch (sensorInfo.getType()) {
                 case BUZZER:    showBuzzerControlDialog(sensorInfo, button);    break;
-//                case LED:       showLedControlDialog(sensorInfo, button);       break;
                 case CAMERA:    showCameraControlDialog(sensorInfo, button);    break;
                 case DOOR:      showDoorControlDialog(sensorInfo, button);      break;
                 case FAN:
@@ -600,7 +599,7 @@ public class SensorListActivity extends AppCompatActivity {
      */
     private void controlDevice(final SensorInfo sensorInfo, int command, final Button button) {
         button.setEnabled(false);
-        //sensorInfo.setActivated(!sensorInfo.isActivated()); //WIS
+        //sensorInfo.setActivated(!sensorInfo.isActivated()); //for LoRa
         sensorInfo.setSuspend(true);
 
         // update listview
@@ -985,7 +984,7 @@ public class SensorListActivity extends AppCompatActivity {
                     sensorArray = TDVBuilder.parseSensorData(tlvArray);
                 }
                 for (SensorInfo localInfo : sensorInfos) {
-                    //localInfo.setActivated(false); //WIS
+                    //localInfo.setActivated(false); //for LoRa
                     if (!localInfo.isControlling()) {
                         localInfo.setSuspend(false);
                     }

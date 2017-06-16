@@ -1,5 +1,6 @@
 package tp.skt.onem2m.net.mqtt;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.lang.reflect.Array;
@@ -111,8 +112,14 @@ public class MQTTUtils {
                 + "GenericArrayType, but <" + type + "> is of type " + className);
     }
 
+    /**
+     *
+     *
+     * @param response
+     * @return
+     */
     public static String getRequestRi(String response) {
-        if (null != response) {
+        if (TextUtils.isEmpty(response) == false) {
             int offset = response.indexOf("<ri>");
             int end = response.indexOf("</ri>");
 

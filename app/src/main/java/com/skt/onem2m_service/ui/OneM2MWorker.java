@@ -317,13 +317,13 @@ public class OneM2MWorker {
             return;
         }
 //        String mgmtCmdName = deviceID + "_" + Const.MGMTCMD_NAME;
-        String mgmtCmdName = deviceID + "_extDevMgmt"; // for WIS
+        String mgmtCmdName = deviceID + "_extDevMgmt"; // for LoRa
 
         try {
             mgmtCmd mgmtCmdUpdate = new mgmtCmd.Builder(Definitions.Operation.Update).
                     nm(mgmtCmdName).
                     cmt(Const.CMD_PREFIX).
-                    exra(/*Const.CMD_PREFIX + */exra). //WIS
+                    exra(exra).
                     exe("true").
                     uKey(uKey).build();
 
