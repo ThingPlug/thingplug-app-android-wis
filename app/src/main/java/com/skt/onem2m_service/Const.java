@@ -16,7 +16,7 @@ public class Const {
     public static final String URL_SEARCH_DEFAULT = "http://thingplugpf.sktiot.com:9000";
     public static final String URL_REGISTER_DEFAULT = "http://thingplugsvc.sktiot.com";
     public static final String URL_LOGIN = "/ThingPlug?division=user&function=login";
-    public static final String URL_SEARCH_DEVICE = "/ThingPlug?division=searchDevice&function=myDevice&startIndex=1&countPerPage=50";
+    public static final String URL_SEARCH_DEVICE = "/ThingPlug?division=searchDevice&function=myDevice&startIndex=1&countPerPage=300";
     public static final String URL_REGISTER_DEVICE = "/ThingPlug?division=device&function=regist";
 
     public static final String URL_SERVER_DEFAULT = "thingplugpf.sktiot.com:1883";
